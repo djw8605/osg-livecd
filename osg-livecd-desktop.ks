@@ -9,6 +9,7 @@ repo --name=a-updates --baseurl=http://mirror.centos.org/centos/5/updates/$basea
 #repo --name=a-extras  --baseurl=http://mirror.centos.org/centos/5/extras/$basearch
 repo --name=a-live    --baseurl=http://www.nanotechnologies.qc.ca/propos/linux/centos-live/$basearch/live
 repo --name=osg       --mirrorlist=http://repo.grid.iu.edu/mirror/osg-release/$basearch
+repo --name=osg-contrib       --mirrorlist=http://repo.grid.iu.edu/mirror/osg-contrib/$basearch
 repo --name=epel      --mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=epel-5&arch=$basearch
 repo --name=a-installer --baseurl=http://www.nanotechnologies.qc.ca/propos/linux/centos-live/$basearch/unsupported
 xconfig --startxonboot
@@ -206,7 +207,7 @@ yum-priorities
 epel-release
 osg-release
 osg-client-condor
-
+osg-background
 
 # LiveCD bits to set up the livecd and be able to install
 # Installation from the livecd requires anaconda >= 11.2.0.66
@@ -649,8 +650,8 @@ cat \$LIVE_ROOT/isolinux/cleaned.txt \$LIVE_ROOT/isolinux/default.txt \$LIVE_ROO
 rm -f \$LIVE_ROOT/isolinux/*.txt
 
 # Change the background picture to OSG
-mkdir -p $LIVE_ROOT/usr/local/share
-wget -O $LIVE_ROOT/usr/local/share/osg-logo-background.png "http://osg-docdb.opensciencegrid.org/0006/000602/001/osg_logo_4c_white%20%5BConverted%5D.png"
+#mkdir -p $LIVE_ROOT/usr/local/share
+#wget -O $LIVE_ROOT/usr/local/share/osg-logo-background.png "http://osg-docdb.opensciencegrid.org/0006/000602/001/osg_logo_4c_white%20%5BConverted%5D.png"
 
 EOF_postnochroot
 
