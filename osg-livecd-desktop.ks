@@ -205,6 +205,8 @@ yum-metadata-parser
 yum-priorities
 epel-release
 osg-release
+osg-client-condor
+
 
 # LiveCD bits to set up the livecd and be able to install
 # Installation from the livecd requires anaconda >= 11.2.0.66
@@ -586,7 +588,7 @@ rm -f /core*
 ##################
 # Install OSG
 ##################
-yum install -y osg-client-condor
+# yum install -y osg-client-condor
 
 
 # Install new background
