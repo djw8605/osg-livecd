@@ -8,7 +8,7 @@ repo --name=a-base    --baseurl=http://mirror.unl.edu/centos/5/os/$basearch
 repo --name=a-updates --baseurl=http://mirror.unl.edu/centos/5/updates/$basearch
 #repo --name=a-extras  --baseurl=http://mirror.centos.org/centos/5/extras/$basearch
 repo --name=a-live    --baseurl=http://www.nanotechnologies.qc.ca/propos/linux/centos-live/$basearch/live
-repo --name=osg       --priority=98   --mirrorlist=http://repo.grid.iu.edu/mirror/osg-release/$basearch
+repo --name=osg       --mirrorlist=http://repo.grid.iu.edu/mirror/osg-release/$basearch
 repo --name=epel      --mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=epel-5&arch=$basearch
 repo --name=a-installer --baseurl=http://www.nanotechnologies.qc.ca/propos/linux/centos-live/$basearch/unsupported
 xconfig --startxonboot
