@@ -584,6 +584,21 @@ rm -f /core*
  fi)
 
 
+##################
+# Install EPEL
+##################
+wget http://download.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
+rpm -i epel-release-5-4.noarch.rpm
+
+# Install new background
+gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/color_shading_type "solid" >/dev/null
+gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/primary_color "#000000000000" >/dev/null
+gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/secondary_color "#ffffffffffff" >/dev/null
+gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/picture_filename "/usr/local/share/osg-logo-background.png" >/dev/null
+gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/picture_options "centered" >/dev/null
+gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/picture_opacity "100" >/dev/null
+gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t bool -s /desktop/gnome/background/draw_background true >/dev/null
+
 
 EOF_post
 
@@ -635,13 +650,6 @@ rm -f \$LIVE_ROOT/isolinux/*.txt
 # Change the background picture to OSG
 mkdir -p $LIVE_ROOT/usr/local/share
 wget -O $LIVE_ROOT/usr/local/share/osg-logo-background.png "http://osg-docdb.opensciencegrid.org/0006/000602/001/osg_logo_4c_white%20%5BConverted%5D.png"
-gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/color_shading_type "solid" >/dev/null
-gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/primary_color "#000000000000" >/dev/null
-gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/secondary_color "#ffffffffffff" >/dev/null
-gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/picture_filename "/usr/local/share/osg-logo-background.png" >/dev/null
-gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/picture_options "centered" >/dev/null
-gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/picture_opacity "100" >/dev/null
-gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t bool -s /desktop/gnome/background/draw_background true >/dev/null
 
 EOF_postnochroot
 
