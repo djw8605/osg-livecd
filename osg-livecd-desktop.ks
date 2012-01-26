@@ -203,9 +203,8 @@ patch
 yum-fastestmirror
 yum-metadata-parser
 yum-priorities
-
+epel-release
 osg-release
-osg-client-condor
 
 # LiveCD bits to set up the livecd and be able to install
 # Installation from the livecd requires anaconda >= 11.2.0.66
@@ -585,10 +584,10 @@ rm -f /core*
 
 
 ##################
-# Install EPEL
+# Install OSG
 ##################
-wget http://download.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
-rpm -i epel-release-5-4.noarch.rpm
+yum install -y osg-client-condor
+
 
 # Install new background
 gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/color_shading_type "solid" >/dev/null
