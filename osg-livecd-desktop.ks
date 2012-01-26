@@ -4,8 +4,8 @@ timezone US/Eastern
 auth --useshadow --enablemd5
 selinux --enforcing
 firewall --enabled
-repo --name=a-base    --baseurl=http://mirror.unl.edu/centos/5/os/$basearch
-repo --name=a-updates --baseurl=http://mirror.unl.edu/centos/5/updates/$basearch
+repo --name=a-base    --baseurl=http://mirror.centos.org/centos/5/os/$basearch
+repo --name=a-updates --baseurl=http://mirror.centos.org/centos/5/updates/$basearch
 #repo --name=a-extras  --baseurl=http://mirror.centos.org/centos/5/extras/$basearch
 repo --name=a-live    --baseurl=http://www.nanotechnologies.qc.ca/propos/linux/centos-live/$basearch/live
 repo --name=osg       --mirrorlist=http://repo.grid.iu.edu/mirror/osg-release/$basearch
