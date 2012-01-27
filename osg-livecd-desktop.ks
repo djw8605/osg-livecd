@@ -370,7 +370,7 @@ Encoding=UTF-8
 Terminal=false
 EOF_release_notes
 
-cat > /home/$LIVECD_USER/Desktop/Documentation/OSG-Documentation.desktop << OSG_user_docs
+cat > /home/$LIVECD_USER/Desktop/Documentation/OSG_Documentation.desktop << OSG_user_docs
 [Desktop Entry]
 Name=OSG User Docs
 Comment=OSG User Documentation
