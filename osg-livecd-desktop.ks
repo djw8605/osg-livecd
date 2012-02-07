@@ -375,7 +375,7 @@ Encoding=UTF-8
 Terminal=false
 EOF_release_notes
 
-cat > /home/$LIVECD_USER/Desktop/Documentation/OSG_Documentation.desktop << OSG_user_docs
+cat > /home/$LIVECD_USER/Desktop/OSG_Documentation.desktop << OSG_user_docs
 [Desktop Entry]
 Name=OSG User Docs
 Comment=OSG User Documentation
@@ -387,6 +387,18 @@ Encoding=UTF-8
 Terminal=false
 OSG_user_docs
 
+
+cat > /home/$LIVECD_USER/Desktop/OSG_Cert_Docs.desktop << OSG_cert_docs
+[Desktop Entry]
+Name=How To Get A Certificate
+Comment=How to get a Certificate
+Exec=firefox http://twiki.grid.iu.edu/bin/view/Documentation/CertificateGetWeb
+Icon=/usr/share/pixmaps/redhat-web-browser.png
+Categories=Documentation;
+Type=Application
+Encoding=UTF-8
+Terminal=false
+OSG_user_docs
 
 # add keyboard configuration utility to the desktop
 mkdir -p /home/$LIVECD_USER/Desktop >/dev/null
@@ -535,6 +547,11 @@ cat > /etc/sysconfig/iptables << EOF_iptables
 -A RH-Firewall-1-INPUT -j REJECT --reject-with icmp-host-prohibited
 COMMIT
 EOF_iptables
+
+# Turn off iptables for grid stuff
+chkconfig iptables off
+
+
 
 
 echo ###################################################################
