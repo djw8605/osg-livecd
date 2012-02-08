@@ -398,7 +398,7 @@ Categories=Documentation;
 Type=Application
 Encoding=UTF-8
 Terminal=false
-OSG_user_docs
+OSG_cert_docs
 
 # add keyboard configuration utility to the desktop
 mkdir -p /home/$LIVECD_USER/Desktop >/dev/null
