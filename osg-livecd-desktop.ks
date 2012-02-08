@@ -618,7 +618,7 @@ rm -f /core*
 #gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/color_shading_type "solid" 
 #gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/primary_color "#000000000000" 
 #gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/secondary_color "#ffffffffffff" 
-#gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/picture_filename "/usr/local/share/osg-background.png" 
+gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/picture_filename "/usr/local/share/osg-background.png" 
 #gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/picture_options "centered" 
 #gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t str -s /desktop/gnome/background/picture_opacity "100" 
 #gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -t bool -s /desktop/gnome/background/draw_background true
