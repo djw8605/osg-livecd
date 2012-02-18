@@ -9,10 +9,10 @@
 
 lang en_US.UTF-8
 keyboard us
-timezone US/Eastern
+timezone US/Central
 auth --useshadow --enablemd5
-selinux --enforcing
-firewall --enabled --service=mdns
+selinux --disabled
+firewall --disabled 
 
 # SL repositories
 repo --name=base      --baseurl=http://ftp.scientificlinux.org/linux/scientific/6.2/$basearch/os/
@@ -39,6 +39,7 @@ services --enabled=NetworkManager --disabled=network,sshd
 ########################################################################
 
 %packages
+system-config-firewall-base
 syslinux
 kernel
 
