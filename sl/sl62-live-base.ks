@@ -29,7 +29,7 @@ repo --name=epel --baseurl=http://mirror.unl.edu/epel/6/x86_64/
 repo --name=fastbugs  --baseurl=http://ftp.scientificlinux.org/linux/scientific/6.2/$basearch/updates/fastbugs/
 
 xconfig --startxonboot
-services --enabled=NetworkManager --disabled=network,sshd
+services --enabled=NetworkManager,condor --disabled=network,sshd,bwctld
 
 
 ########################################################################
@@ -529,6 +529,44 @@ if [ "\\\$( cmdline_parameter automount )" ]; then
 	    fi
 	fi
 fi
+
+cat > /home/$LIVECD_USER/Desktop/OSG_LiveCD.desktop << OSG_livecd_docs
+[Desktop Entry]
+Name=OSG LiveCD Docs
+Comment=OSG LiveCD Documentation
+Exec=firefox http://twiki.grid.iu.edu/bin/view/Documentation/Release3/OSGLiveImage
+Icon=/usr/share/pixmaps/redhat-web-browser.png
+Categories=Documentation;
+Type=Application
+Encoding=UTF-8
+Terminal=false
+OSG_livecd_docs
+
+
+cat > /home/$LIVECD_USER/Desktop/OSG_Documentation.desktop << OSG_user_docs
+[Desktop Entry]
+Name=OSG User Docs
+Comment=OSG User Documentation
+Exec=firefox http://twiki.grid.iu.edu/bin/view/Documentation/UsingTheGrid
+Icon=/usr/share/pixmaps/redhat-web-browser.png
+Categories=Documentation;
+Type=Application
+Encoding=UTF-8
+Terminal=false
+OSG_user_docs
+
+
+cat > /home/$LIVECD_USER/Desktop/OSG_Cert_Docs.desktop << OSG_cert_docs
+[Desktop Entry]
+Name=How To Get A Certificate
+Comment=How to get a Certificate
+Exec=firefox http://twiki.grid.iu.edu/bin/view/Documentation/CertificateGetWeb
+Icon=/usr/share/pixmaps/redhat-web-browser.png
+Categories=Documentation;
+Type=Application
+Encoding=UTF-8
+Terminal=false
+OSG_cert_docs
 
 ### give back ownership to the default user
 chown -R \\\$LIVECD_USER:\\\$LIVECD_USER /home/\\\$LIVECD_USER
