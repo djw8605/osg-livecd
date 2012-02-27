@@ -381,8 +381,8 @@ fi
 
 ### add keyboard and display configuration utilities to the desktop
 mkdir -p /home/\\\$LIVECD_USER/Desktop >/dev/null
-cp /usr/share/applications/gnome-keyboard.desktop           /home/\\\$LIVECD_USER/Desktop/
-cp /usr/share/applications/gnome-display-properties.desktop /home/\\\$LIVECD_USER/Desktop/
+#cp /usr/share/applications/gnome-keyboard.desktop           /home/\\\$LIVECD_USER/Desktop/
+#cp /usr/share/applications/gnome-display-properties.desktop /home/\\\$LIVECD_USER/Desktop/
 
 ### disable screensaver locking
 gconftool-2 --direct --config-source=xml:readwrite:/etc/gconf/gconf.xml.defaults -s -t bool   /apps/gnome-screensaver/lock_enabled "false" >/dev/null
